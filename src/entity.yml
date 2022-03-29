@@ -1,0 +1,9 @@
+$id: https://stuartda.github.io/bedrock-schema/
+type: object
+required:
+  - format_version
+  - minecraft:entity
+properties:
+  format_version:
+    type: string
+
