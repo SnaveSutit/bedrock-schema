@@ -14,6 +14,8 @@ properties:
 
   minecraft:npc_dialogue:
     type: object
+    required:
+      - scenes
     properties:
       scenes:
         $ref: '#/$defs/scenes'
@@ -23,10 +25,13 @@ $defs:
     type: array
     properties:
       scene_tag:
-        type:
-          - string
-          - object
+        oneOf:
+          - type: string
+            minLength: 1
+          - type: object
 
       npc_name:
-          - string
-          - object
+        oneOf:
+          - type: string
+            minLength: 1
+          - type: object
