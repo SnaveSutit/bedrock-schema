@@ -5,6 +5,7 @@ required:
   - minecraft:npc_dialogue
 properties:
   format_version:
+    description: Some epic description!
     type:
       - number
       - string
