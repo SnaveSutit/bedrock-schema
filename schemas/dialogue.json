@@ -40,7 +40,7 @@
 							"minLength": 1
 						},
 						{
-							"type": "object"
+							"$ref": "./rawtext.json"
 						}
 					]
 				},
@@ -51,7 +51,7 @@
 							"minLength": 1
 						},
 						{
-							"type": "object"
+							"$ref": "./rawtext.json"
 						}
 					]
 				}

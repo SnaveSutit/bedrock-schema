@@ -29,10 +29,11 @@ $defs:
         oneOf:
           - type: string
             minLength: 1
-          - type: object
+          - $ref: ./rawtext.json
 
       npc_name:
         oneOf:
           - type: string
             minLength: 1
-          - type: object
+          - $ref: ./rawtext.json
+

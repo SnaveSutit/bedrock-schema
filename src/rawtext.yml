@@ -1,0 +1,52 @@
+$id: https://stuartda.github.io/bedrock-schema/
+type: object
+required:
+  - rawtext
+properties:
+  rawtext:
+    description: A list contains text objects
+    type: array
+    items:
+      oneOf:
+        - $ref: '#/$defs/textObject'
+        - $ref: '#/$defs/translateObject'
+        - $ref: '#/$defs/scoreObject'
+
+$defs:
+  textObject:
+    type: object
+    required:
+      - text
+    properties:
+      text:
+        description: A string containing plain text to display directly.
+        type: string
+
+  translateObject:
+    type: object
+    required:
+      - translate
+    properties:
+      translate:
+        description: A translation identifier, to be displayed as the corresponding text in the player's selected language. If no corresponding translation can be found, the identifier itself is used as the translation text. This identifier is the same as the identifiers found in lang files from assets or resource packs.
+        type: text
+
+  scoreObject:
+    type: object
+    properties:
+      score:
+        description: Displays a score holder's current score in an objective. Displays nothing if the given score holder or the given objective do not exist, or if the score holder is not tracked in the objective.
+        type: object
+        required:
+          - objective
+          - name
+        properties:
+          objective:
+            description: The internal name of the objective to display the player's score in.
+            type: string
+          name:
+            description: The name of the score holder whose score should be displayed.
+            type: string
+          value:
+            description: Optional. If present, this value is used regardless of what the score would have been.
+            type: integer
