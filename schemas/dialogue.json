@@ -1,0 +1,45 @@
+{
+	"$id": "https://stuartda.github.io/bedrock-schema/",
+	"type": "object",
+	"required": [
+		"format_version",
+		"minecraft:npc_dialogue"
+	],
+	"properties": {
+		"format_version": {
+			"type": [
+				"number",
+				"string"
+			],
+			"format": "number",
+			"examples": [
+				1.17
+			]
+		},
+		"minecraft:npc_dialogue": {
+			"type": "object",
+			"properties": {
+				"scenes": {
+					"$ref": "#/$defs/scenes"
+				}
+			}
+		}
+	},
+	"$defs": {
+		"scenes": {
+			"type": "array",
+			"properties": {
+				"scene_tag": {
+					"type": [
+						"string",
+						"object"
+					]
+				},
+				"npc_name": [
+					"string",
+					"object"
+				]
+			}
+		}
+	}
+}

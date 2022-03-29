@@ -1,0 +1,7 @@
+{
+	"dependencies": {},
+	"devDependencies": {
+		"chokidar": "^3.5.3",
+		"js-yaml": "^4.1.0"
+	}
+}
